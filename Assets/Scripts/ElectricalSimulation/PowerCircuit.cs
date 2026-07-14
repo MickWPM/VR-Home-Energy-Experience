@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class PowerCircuit : MonoBehaviour
 {
     public PowerConsumer[] powerConsumers;
-    [SerializeField] private float MaxWattage = 30f;
+    [SerializeField] public readonly float MaxWattage = 30f;
     [SerializeField] private bool CircuitOpen = true;
     [SerializeField] private bool PowerAvailable = false;
 
