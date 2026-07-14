@@ -4,8 +4,13 @@ using UnityEngine.Events;
 
 public class PowerSource : MonoBehaviour
 {
-    [SerializeField] private float MaxWattage = 30f;
-    [SerializeField] private PowerCircuit[] attachedCircuits;
+    public float MaxWattage
+    {
+        get => maxWattage;
+    }
+    [SerializeField] private float maxWattage = 30f;
+    public PowerCircuit[] attachedCircuits;
+    public bool Energised { get => SourceOpen; }
     [SerializeField] private bool SourceOpen = true;
 
     public float[] TMPDEBUG_currentCircuitConsumption;
@@ -56,9 +61,11 @@ public class PowerSource : MonoBehaviour
         //Nothing!
     }
 
+    private float totalDesiredDraw;
+    public float TotalDesiredDraw { get => totalDesiredDraw; }
     private void SourceOpenUpdate()
     {
-        var totalDesiredDraw = GetTotalDraw();
+        totalDesiredDraw = GetTotalDraw();
 
         if (totalDesiredDraw > MaxWattage)
         {
@@ -105,5 +112,19 @@ public class PowerSource : MonoBehaviour
             circuit.SetPowerSourceStatus(status);
         }
 
+    }
+
+    public string GetNiceSummary()
+    {
+        float currentDraw = SourceOpen ? GetTotalDraw() : 0;
+        string trippedMessage = SourceOpen ? string.Empty : " (TRIPPED)";
+        string s = $"Power Network Summary\r\nSource: {currentDraw} / {MaxWattage}{trippedMessage}\r\n{attachedCircuits.Length} connected circuits\r\n\r\n";
+        //add each circuit message
+        foreach (var circuit in attachedCircuits)
+        {
+            s+= circuit.GetNiceSummary();
+        }
+
+        return s;
     }
 }

@@ -5,9 +5,17 @@ using UnityEngine.Events;
 public class PowerCircuit : MonoBehaviour
 {
     public PowerConsumer[] powerConsumers;
-    [SerializeField] public readonly float MaxWattage = 30f;
+    public float MaxWattage
+    {
+        get => maxWattage;
+    }
+    [SerializeField] private float maxWattage = 30f;
     [SerializeField] private bool CircuitOpen = true;
     [SerializeField] private bool PowerAvailable = false;
+    public bool Energised
+    {
+        get => CircuitOpen && PowerAvailable;
+    }
 
     public float CurrentPowerOnLine
     {
@@ -90,5 +98,12 @@ public class PowerCircuit : MonoBehaviour
         {
             consumer.SetPowerAvailable(enabled);
         }
+    }
+
+    public string GetNiceSummary()
+    {
+        var currentDraw = CircuitOpen && PowerAvailable ? CurrentPowerOnLine : 0;
+        var trippedString = CircuitOpen ? string.Empty : " (TRIPPED)";
+        return $"{gameObject.name}: {currentDraw}/ {MaxWattage}{trippedString}\\r\\n{powerConsumers.Length} connected consumers\\r\\n\\r\\n";
     }
 }

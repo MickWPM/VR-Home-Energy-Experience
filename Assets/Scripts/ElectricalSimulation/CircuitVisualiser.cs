@@ -22,6 +22,7 @@ public class CircuitVisualiser : MonoBehaviour
         SetupLineRenderer();
     }
 
+    public Gradient noPowerGradient;
     public Gradient lowerPowerGradient;
     public Gradient highPowerGradient;
     private void SetupLineRenderer()
@@ -47,6 +48,7 @@ public class CircuitVisualiser : MonoBehaviour
     {
         var loadPercent = powerCircuit.CurrentPowerOnLine / powerCircuit.MaxWattage;
         var lrColour = loadPercent > 0.75f ? highPowerGradient : lowerPowerGradient;
+        if (powerCircuit.Energised == false) lrColour = noPowerGradient;
         lineRenderer.colorGradient = lrColour;
     }
 
