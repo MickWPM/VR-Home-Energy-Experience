@@ -4,6 +4,9 @@ using UnityEngine;
 public class SourceVisualiser : MonoBehaviour
 {
 
+    private static string EnergisedKey = "_Energised";
+    private static string PowerDrawPercentKey = "_PowerDrawPercent";
+    private Material material;
     [SerializeField] private PowerSource powerSource;
     private LineRenderer lineRenderer;
 
@@ -16,6 +19,7 @@ public class SourceVisualiser : MonoBehaviour
             return;
         }
         lineRenderer = GetComponent<LineRenderer>();
+        material = lineRenderer.material;
     }
 
     private void Start()
@@ -52,8 +56,12 @@ public class SourceVisualiser : MonoBehaviour
     private void UpdateLineRenderer()
     {
         var loadPercent = powerSource.TotalDesiredDraw / powerSource.MaxWattage;
-        var lrColour = loadPercent > 0.75f ? highPowerGradient : lowerPowerGradient;
-        if (powerSource.Energised == false) lrColour = noPowerGradient;
-        lineRenderer.colorGradient = lrColour;
+        material.SetFloat(PowerDrawPercentKey, loadPercent);
+
+        float energised = powerSource.Energised ? 1f : 0f;
+        material.SetFloat(EnergisedKey, energised);
+        //var lrColour = loadPercent > 0.75f ? highPowerGradient : lowerPowerGradient;
+        //if (powerSource.Energised == false) lrColour = noPowerGradient;
+        //lineRenderer.colorGradient = lrColour;
     }
 }
