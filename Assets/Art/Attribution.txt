@@ -4,3 +4,14 @@ by SaraFe
 https://www.fontspace.com/estie-bestie-font-f139445
 License Info:
 Freeware, Non-Commercial
+
+
+
+--- Textures ---
+woodTiled.png
+by Barham & Sons
+https://architextures.org/textures/1697
+
+tilesTiled.png
+Limestone Stack available at:
+https://architextures.org/textures/918
