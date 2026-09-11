@@ -47,9 +47,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _EmissionPower: 3.12
-    - _PoweredOn: 0
+    - _PoweredOn: 1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _XRMotionVectorsPass: 1
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
