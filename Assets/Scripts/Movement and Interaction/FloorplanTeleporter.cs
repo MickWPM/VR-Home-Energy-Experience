@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class FloorplanTeleporter : MonoBehaviour, ISerializationCallbackReceiver
+public class FloorplanTeleporter : MonoBehaviour
 {
     public Transform XROrigin;
     public Transform landryPos, kitchenPos, diningPos;
@@ -25,36 +25,4 @@ public class FloorplanTeleporter : MonoBehaviour, ISerializationCallbackReceiver
         XROrigin.rotation = targetPos.rotation;
     }
 
-    #region SceneVerification
-    void ISerializationCallbackReceiver.OnBeforeSerialize()
-    {
-    }
-
-    void ISerializationCallbackReceiver.OnAfterDeserialize()
-    {        
-        #if UNITY_EDITOR
-        ValidateFields();
-        #endif
-    }
-
-    private void ValidateFields()
-    {
-        if (XROrigin == null)
-        {
-            Debug.LogError("XR Origin not assigned to Floorplan Teleporter");
-        }
-        if (landryPos == null)
-        {
-            Debug.LogError("landryPos not assigned to Floorplan Teleporter");
-        }
-        if (kitchenPos == null)
-        {
-            Debug.LogError("kitchenPos not assigned to Floorplan Teleporter");
-        }
-        if (diningPos == null)
-        {
-            Debug.LogError("diningPos not assigned to Floorplan Teleporter");
-        }
-    }
-    #endregion
 }
