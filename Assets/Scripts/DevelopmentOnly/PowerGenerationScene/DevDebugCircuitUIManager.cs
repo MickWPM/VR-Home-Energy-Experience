@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class TempCircuitUIManager : MonoBehaviour
+public class DevDebugCircuitUIManager : MonoBehaviour
 {
     public TextMeshProUGUI summaryText;
     public PowerSource powerSource;
