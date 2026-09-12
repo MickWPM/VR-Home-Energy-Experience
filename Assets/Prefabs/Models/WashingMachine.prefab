@@ -30,7 +30,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5198282677615783411}
-  - {fileID: 4008167548235938012}
   - {fileID: 6072476645391606119}
   m_Father: {fileID: 5750883922821094906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,100 +80,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::tmp_button_test
   sourceRenderer: {fileID: 8587492433644792096}
   applianceMat: {fileID: 0}
---- !u!1001 &2229067799833761050
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 4355736399761280398}
-    m_Modifications:
-    - target: {fileID: 1639134274169846316, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_Name
-      value: VRPushPowerButton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639134274169846316, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.4593
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1595
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.5436
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.70710677
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_LastSelectExited.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7198237630169188959}
-    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TogglePower
-      objectReference: {fileID: 0}
-    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: tmp_button_test, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-      propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
---- !u!4 &4008167548235938012 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2986135578195766726, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
-  m_PrefabInstance: {fileID: 2229067799833761050}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6039182139081180812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -347,6 +252,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
+      propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
       propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -354,6 +263,10 @@ PrefabInstance:
       propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7198237630169188959}
+    - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
+      propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6046579180969698657, guid: 7ec12ea5b85c69a4bb0f3acd0719189b, type: 3}
       propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TogglePower
