@@ -146,6 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7329322273221159469}
+  - component: {fileID: 2089719210687618810}
   m_Layer: 0
   m_Name: BreakerBoard
   m_TagString: Untagged
@@ -169,6 +170,23 @@ Transform:
   - {fileID: 903645913864553301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2089719210687618810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074708738921780368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9924524434dff8a478561e8ef3c23b87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreakerBoardCircuitMonitor
+  powerSource: {fileID: 0}
+  mainsCircuitText: {fileID: 144235657459480787}
+  circuit1Text: {fileID: 8984927415741837318}
+  circuit2Text: {fileID: 7479671599904279537}
+  circuit3Text: {fileID: 2102038569189544917}
 --- !u!1 &1678476618304060601
 GameObject:
   m_ObjectHideFlags: 0
