@@ -79,10 +79,14 @@ public class PowerCircuit : MonoBehaviour
         CircuitBreakerResetEvent?.Invoke();
         SetCircuitStatus(true);
     }
+
+    public UnityEvent<bool> CircuitStatusUpdateEvent;
     public void SetCircuitStatus(bool enabled)
     {
         if (CircuitOpen == enabled) return;
         CircuitOpen = enabled;
+        CircuitStatusUpdateEvent?.Invoke(enabled);
+
         bool powerAvailable = CircuitOpen ? PowerAvailable : false;
         foreach (var consumer in powerConsumers)
         {

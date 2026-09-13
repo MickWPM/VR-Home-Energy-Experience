@@ -61,8 +61,21 @@ public class PowerConsumer : MonoBehaviour
     {
         if (powerStatus == poweredOn) return;
 
+        //If we are trying to turn on but the circuit has no power, bail early but do this 
+        if (powerStatus && this.powerAvailable == false)
+        {
+            //Only change our powered on state if we are a consumer that retains power state over power failure
+            //eg. lights
+            if (autoSwitchOffOnPowerFail == false)
+            {
+                poweredOn = powerStatus;
+            }
+            return;
+        }
         poweredOn = powerStatus;
+
         CheckEnergisedStatusUpdate();
+
         if (poweredOn)
         {
             PoweredOnEvent?.Invoke();
