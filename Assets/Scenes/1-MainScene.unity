@@ -792,6 +792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiningRoomLights
       objectReference: {fileID: 0}
+    - target: {fileID: 8461596477493957949, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8863731893790216871, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
       propertyPath: m_Name
       value: DiningRoomLightsConsumer
@@ -6493,6 +6497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KitchenLights
       objectReference: {fileID: 0}
+    - target: {fileID: 8461596477493957949, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8863731893790216871, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
       propertyPath: m_Name
       value: KitchenLightsConsumer Variant
@@ -6903,6 +6911,10 @@ PrefabInstance:
     - target: {fileID: 6584723247355889069, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
       propertyPath: m_Name
       value: LaundryLights
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461596477493957949, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8863731893790216871, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
       propertyPath: m_Name
