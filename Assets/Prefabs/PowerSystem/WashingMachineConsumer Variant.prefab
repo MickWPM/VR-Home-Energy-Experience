@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3150943181549129457, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       propertyPath: poweredOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3150943181549129457, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       propertyPath: maxWattageConsumption
@@ -365,7 +365,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: dfce6c0392d50844d92e2bea2b0086ac, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.843
   m_Pitch: 1.16
   Loop: 0
