@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Events;
 
 public class BreakerBoardAnimations : MonoBehaviour
 {
@@ -9,13 +9,15 @@ public class BreakerBoardAnimations : MonoBehaviour
     public Transform doorTransform;
 
     private float t = 0;
-    
 
+    //t being passed in these events so we can act on that if required
+    //Practically we are using this for the audio source to make sure it finishes when we want it to
+    public UnityEvent<float> BreakerDoorOpenAtProgressEvent, BreakerDoorCloseAtProgressEvent;
     [ContextMenu("Open door")]
     public void OpenDoor()
     {
         direction = 1;
-
+        BreakerDoorOpenAtProgressEvent?.Invoke(t);
         if (animating == false)
         {
             AnimateDoor();
@@ -26,7 +28,7 @@ public class BreakerBoardAnimations : MonoBehaviour
     public void CloseDoor()
     {
         direction = -1;
-
+        BreakerDoorCloseAtProgressEvent?.Invoke(t);
         if (animating == false)
         {
             AnimateDoor();
