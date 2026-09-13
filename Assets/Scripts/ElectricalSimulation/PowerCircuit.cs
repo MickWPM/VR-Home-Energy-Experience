@@ -66,6 +66,7 @@ public class PowerCircuit : MonoBehaviour
     public void AddConsumer(PowerConsumer consumer)
     {
         powerConsumers.Add(consumer);
+        consumer.SetPowerAvailable(PowerAvailable);
     }
 
     public bool ContainsConsumer(PowerConsumer consumer)
