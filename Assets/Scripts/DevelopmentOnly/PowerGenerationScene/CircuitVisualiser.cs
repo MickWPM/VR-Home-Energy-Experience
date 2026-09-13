@@ -31,7 +31,7 @@ public class CircuitVisualiser : MonoBehaviour
     public Gradient highPowerGradient;
     private void SetupLineRenderer()
     {
-        int numConsumers = powerCircuit.powerConsumers.Length;
+        int numConsumers = powerCircuit.powerConsumers.Count;
         lineRenderer.positionCount = numConsumers + 1;
         Vector3[] positions = new Vector3[numConsumers + 1];
         positions[0] = powerCircuit.transform.position;
