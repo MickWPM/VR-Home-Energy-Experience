@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PowerCircuit : MonoBehaviour
 {
-    public PowerConsumer[] powerConsumers;
+    public List<PowerConsumer> powerConsumers = new List<PowerConsumer>();
     public float MaxWattage
     {
         get => maxWattage;
@@ -23,9 +23,11 @@ public class PowerCircuit : MonoBehaviour
     }
 
 
+    //Awake just lets us define a circuit by child elements.
+    //This is not how it is currently set up in the main scene but it allows design flexibility
     private void Awake()
     {
-        if (powerConsumers == null || powerConsumers.Length == 0)
+        if (powerConsumers == null || powerConsumers.Count == 0)
         {
             Debug.Log("Getting consumers", gameObject);
             List<PowerConsumer> consumers = new List<PowerConsumer>();
@@ -37,7 +39,7 @@ public class PowerCircuit : MonoBehaviour
                     consumers.Add(consumer);
                 }
             }
-            powerConsumers = consumers.ToArray();
+            powerConsumers = consumers;
         }
     }
 
@@ -46,7 +48,7 @@ public class PowerCircuit : MonoBehaviour
         if (CircuitOpen == false) return 0;
         if (PowerAvailable == false) return 0;
 
-        if (powerConsumers == null || powerConsumers.Length < 1) return 0;
+        if (powerConsumers == null || powerConsumers.Count < 1) return 0;
 
         float power = 0;
         foreach (PowerConsumer consumer in powerConsumers)
@@ -56,6 +58,20 @@ public class PowerCircuit : MonoBehaviour
         return power;
     }
 
+    public void RemoveConsumer(PowerConsumer consumer)
+    {
+        if (powerConsumers.Contains(consumer)) powerConsumers.Remove(consumer);
+    }
+
+    public void AddConsumer(PowerConsumer consumer)
+    {
+        powerConsumers.Add(consumer);
+    }
+
+    public bool ContainsConsumer(PowerConsumer consumer)
+    {
+        return powerConsumers.Contains(consumer);
+    }
 
     public float currentCircuitPower;
     private void Update()
@@ -79,10 +95,14 @@ public class PowerCircuit : MonoBehaviour
         CircuitBreakerResetEvent?.Invoke();
         SetCircuitStatus(true);
     }
+
+    public UnityEvent<bool> CircuitStatusUpdateEvent;
     public void SetCircuitStatus(bool enabled)
     {
         if (CircuitOpen == enabled) return;
         CircuitOpen = enabled;
+        CircuitStatusUpdateEvent?.Invoke(enabled);
+
         bool powerAvailable = CircuitOpen ? PowerAvailable : false;
         foreach (var consumer in powerConsumers)
         {
@@ -104,6 +124,6 @@ public class PowerCircuit : MonoBehaviour
     {
         var currentDraw = CircuitOpen && PowerAvailable ? CurrentPowerOnLine : 0;
         var trippedString = CircuitOpen ? string.Empty : " (TRIPPED)";
-        return $"{gameObject.name}: {currentDraw}/ {MaxWattage}{trippedString}\\r\\n{powerConsumers.Length} connected consumers\\r\\n\\r\\n";
+        return $"{gameObject.name}: {currentDraw}/ {MaxWattage}{trippedString}\\r\\n{powerConsumers.Count} connected consumers\\r\\n\\r\\n";
     }
 }

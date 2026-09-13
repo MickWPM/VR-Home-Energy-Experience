@@ -1,40 +1,47 @@
 using UnityEngine;
 
-public class tmp_button_test : MonoBehaviour
+public class AppliancePowerVisuals : MonoBehaviour
 {
     public MeshRenderer sourceRenderer;
-    [SerializeField]private Material applianceMat;
-    private bool energised = false;
+    public PowerConsumer appliancePower;
+    private Material applianceMat;
+    private bool appliancePowerSwitchedOn = false;
     private static string POWERED_ON = "_PoweredOn";
 
     private void Awake()
     {
+        if (appliancePower == null)
+        {
+            Debug.LogError("No power system associated with Appliance Power Visuals", gameObject);
+            this.enabled = false;
+        }
         applianceMat = sourceRenderer.material;
         UpdateShader();
     }
 
+
     [ContextMenu("Toggle Power")]
     public void TogglePower()
     {
-        energised = !energised;
+        appliancePowerSwitchedOn = !appliancePowerSwitchedOn;
         UpdateShader();
     }
 
-    public void PowerOn()
+    public void SetPoweredOn()
     {
-        energised = true;
+        appliancePowerSwitchedOn = true;
         UpdateShader();
     }
 
-    public void PowerOff()
+    public void SetPoweredOff()
     {
-        energised = false;
+        appliancePowerSwitchedOn = false;
         UpdateShader();
     }
 
     private void UpdateShader()
     {
-        applianceMat.SetFloat(POWERED_ON, energised ? 1f : 0f);
+        applianceMat.SetFloat(POWERED_ON, appliancePowerSwitchedOn ? 1f : 0f);
     }
 
 }

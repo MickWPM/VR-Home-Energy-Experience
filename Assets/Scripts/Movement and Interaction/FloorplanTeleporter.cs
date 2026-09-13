@@ -4,7 +4,7 @@ using UnityEngine;
 public class FloorplanTeleporter : MonoBehaviour
 {
     public Transform XROrigin;
-    public Transform landryPos, kitchenPos, diningPos;
+    public Transform landryPos, kitchenPos, diningPos, breakerBox;
 
     public void TeleportToLaundry()
     {
@@ -17,6 +17,10 @@ public class FloorplanTeleporter : MonoBehaviour
     public void TeleportToDining()
     {
         TeleportToTransform(diningPos);
+    }
+    public void TeleportToBreaker()
+    {
+        TeleportToTransform(breakerBox);
     }
 
     public void TeleportToTransform(Transform targetPos)
