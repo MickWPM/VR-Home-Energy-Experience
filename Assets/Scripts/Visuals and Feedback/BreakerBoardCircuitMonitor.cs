@@ -4,7 +4,10 @@ using UnityEngine;
 public class BreakerBoardCircuitMonitor : MonoBehaviour
 {
     [SerializeField]private PowerSource powerSource;
-    [SerializeField] private TextMeshProUGUI mainsCircuitText, circuit1Text, circuit2Text, circuit3Text;
+    [SerializeField]private TextMeshProUGUI mainsCircuitText, circuit1Text, circuit2Text, circuit3Text;
+    public GameObject mainsSwitch, circuit1Switch, circuit2Switch, circuit3Switch;
+    //Mains breaker rotates on X, circuit rockers rotate on Y
+    public float mainsOnRot, mainsOffRot, circuitRockerOnRot, circuitRockerOffRot;
 
     private void Start()
     {
@@ -12,26 +15,29 @@ public class BreakerBoardCircuitMonitor : MonoBehaviour
         circuit1Text.text = ""; //$"Circuit 1 Rating: {powerSource.attachedCircuits[0].MaxWattage} W (Current draw {powerSource.TMPDEBUG_currentCircuitConsumption[0]})";
         circuit2Text.text = ""; //$"Circuit 2 Rating: {powerSource.attachedCircuits[1].MaxWattage} W (Current draw {powerSource.TMPDEBUG_currentCircuitConsumption[1]})";
         circuit3Text.text = ""; //$"Circuit 3 Rating: {powerSource.attachedCircuits[2].MaxWattage} W (Current draw {powerSource.TMPDEBUG_currentCircuitConsumption[2]})";
+        SetBreakerStatus(powerSource.Energised);
+        SetCircuit1Status(powerSource.attachedCircuits[0].Energised);
+        SetCircuit2Status(powerSource.attachedCircuits[1].Energised);
+        SetCircuit3Status(powerSource.attachedCircuits[2].Energised);
     }
 
 
-    public GameObject mainsSwitch, circuit1Switch, circuit2Switch, circuit3Switch;
     public void SetBreakerStatus(bool powerOn)
     {
-        mainsSwitch.SetActive(powerOn);
+        mainsSwitch.transform.localEulerAngles = new Vector3(powerOn ? mainsOnRot : mainsOffRot, 0, 0);
     }
 
     public void SetCircuit1Status(bool powerOn)
     {
-        circuit1Switch.SetActive(powerOn);
+        circuit1Switch.transform.localEulerAngles = new Vector3(0, powerOn ? circuitRockerOnRot : circuitRockerOffRot, 0);
     }
     public void SetCircuit2Status(bool powerOn)
     {
-        circuit2Switch.SetActive(powerOn);
+        circuit2Switch.transform.localEulerAngles = new Vector3(0, powerOn ? circuitRockerOnRot : circuitRockerOffRot, 0);
     }
     public void SetCircuit3Status(bool powerOn)
     {
-        circuit3Switch.SetActive(powerOn);
+        circuit3Switch.transform.localEulerAngles = new Vector3(0, powerOn ? circuitRockerOnRot : circuitRockerOffRot, 0);
     }
 
     private void Update()
