@@ -7,7 +7,8 @@ public class BreakerBoardCircuitMonitor : MonoBehaviour
     [SerializeField]private TextMeshProUGUI mainsCircuitText;
     public GameObject mainsSwitch, circuit1Switch, circuit2Switch, circuit3Switch;
     //Mains breaker rotates on X, circuit rockers rotate on Y
-    public float mainsOnRot, mainsOffRot, circuitRockerOnRot, circuitRockerOffRot;
+    [SerializeField] private float mainsOnRot, mainsOffRot, circuitRockerOnRot, circuitRockerOffRot;
+    public GameObject emergencyLight;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class BreakerBoardCircuitMonitor : MonoBehaviour
     public void SetBreakerStatus(bool powerOn)
     {
         mainsSwitch.transform.localEulerAngles = new Vector3(powerOn ? mainsOnRot : mainsOffRot, 0, 0);
+        emergencyLight.SetActive(!powerOn);
     }
 
     public void SetCircuit1Status(bool powerOn)
