@@ -1,5 +1,7 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class BreakerBoardAnimations : MonoBehaviour
 {
@@ -10,12 +12,17 @@ public class BreakerBoardAnimations : MonoBehaviour
 
     private float t = 0;
 
+    private bool holdDoorOpen = false;
+
     //t being passed in these events so we can act on that if required
     //Practically we are using this for the audio source to make sure it finishes when we want it to
     public UnityEvent<float> BreakerDoorOpenAtProgressEvent, BreakerDoorCloseAtProgressEvent;
     [ContextMenu("Open door")]
     public void OpenDoor()
     {
+        //This is an external call - we ignore it if we are already holding open
+        if (holdDoorOpen) return;
+
         direction = 1;
         BreakerDoorOpenAtProgressEvent?.Invoke(t);
         if (animating == false)
@@ -27,6 +34,9 @@ public class BreakerBoardAnimations : MonoBehaviour
     [ContextMenu("Close door")]
     public void CloseDoor()
     {
+        //This is an external call - we ignore it if we are already holding open
+        if (holdDoorOpen) return;
+
         direction = -1;
         BreakerDoorCloseAtProgressEvent?.Invoke(t);
         if (animating == false)
@@ -62,13 +72,39 @@ public class BreakerBoardAnimations : MonoBehaviour
                 t = Mathf.Clamp01(t); 
                 complete = true;
             }
+            if (holdDoorOpen) complete = true;
         }
 
         float targetRot = direction < 0 ? startRot : endRot;
         doorTransform.localRotation = Quaternion.Euler(new Vector3(0, targetRot, 0));
-        animating = false;
+        AnimationComplete();
     }
 
+    //Tidy up any animation related elements
+    //We can also add events here if needed
+    private void AnimationComplete()
+    {
+        animating = false;
+        //Edge case for if the hold open button is clicked while animating
+        if (holdDoorOpen) SetDoorOpen();
+    }
+
+    public Toggle heldOpenToggle;
+    public void ToggleDoorHoldOpen()
+    {
+        holdDoorOpen = !holdDoorOpen;
+        heldOpenToggle.isOn = holdDoorOpen;
+        //If we are animating, the animation cleanup will set the door to the correct open position if required
+        if (animating == false && holdDoorOpen)
+        {
+            SetDoorOpen();
+        }
+    }
+
+    private void SetDoorOpen()
+    {
+        doorTransform.localRotation = Quaternion.Euler(new Vector3(0, endRot, 0));
+    }
 
     //[ContextMenu("Open door")]
     //public void OpenDoor()
