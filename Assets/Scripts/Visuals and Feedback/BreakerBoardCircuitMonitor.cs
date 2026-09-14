@@ -4,7 +4,7 @@ using UnityEngine;
 public class BreakerBoardCircuitMonitor : MonoBehaviour
 {
     [SerializeField]private PowerSource powerSource;
-    [SerializeField]private TextMeshProUGUI mainsCircuitText, circuit1Text, circuit2Text, circuit3Text;
+    [SerializeField]private TextMeshProUGUI mainsCircuitText;
     public GameObject mainsSwitch, circuit1Switch, circuit2Switch, circuit3Switch;
     //Mains breaker rotates on X, circuit rockers rotate on Y
     public float mainsOnRot, mainsOffRot, circuitRockerOnRot, circuitRockerOffRot;
@@ -12,9 +12,6 @@ public class BreakerBoardCircuitMonitor : MonoBehaviour
     private void Start()
     {
         mainsCircuitText.text = $"Total Mains Power Rating: {powerSource.MaxWattage} W (Current draw {powerSource.TotalDesiredDraw})";
-        circuit1Text.text = ""; //$"Circuit 1 Rating: {powerSource.attachedCircuits[0].MaxWattage} W (Current draw {powerSource.TMPDEBUG_currentCircuitConsumption[0]})";
-        circuit2Text.text = ""; //$"Circuit 2 Rating: {powerSource.attachedCircuits[1].MaxWattage} W (Current draw {powerSource.TMPDEBUG_currentCircuitConsumption[1]})";
-        circuit3Text.text = ""; //$"Circuit 3 Rating: {powerSource.attachedCircuits[2].MaxWattage} W (Current draw {powerSource.TMPDEBUG_currentCircuitConsumption[2]})";
         SetBreakerStatus(powerSource.Energised);
         SetCircuit1Status(powerSource.attachedCircuits[0].Energised);
         SetCircuit2Status(powerSource.attachedCircuits[1].Energised);
