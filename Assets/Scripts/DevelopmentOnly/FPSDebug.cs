@@ -9,6 +9,7 @@ public class FPSDebug: MonoBehaviour
     private float accumulatedTime = 0f;
     private int frameCount = 0;
 
+
     void Update()
     {
         accumulatedTime += Time.unscaledDeltaTime;

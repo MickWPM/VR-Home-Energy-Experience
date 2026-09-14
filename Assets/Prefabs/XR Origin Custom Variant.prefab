@@ -418,6 +418,17 @@ PrefabInstance:
       addedObject: {fileID: 6061653055021577386}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+--- !u!114 &5286090150702217065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1178791450436251564, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 6413159301683009733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5681142472215344875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -441,6 +452,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 658476271142859960}
     m_Modifications:
+    - target: {fileID: 894313416002338247, guid: fb3129e8abc2b5c47bfbfcc14601f519, type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 5286090150702217065}
     - target: {fileID: 894313416002338247, guid: fb3129e8abc2b5c47bfbfcc14601f519, type: 3}
       propertyPath: XROrigin
       value: 
