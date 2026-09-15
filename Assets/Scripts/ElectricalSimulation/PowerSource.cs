@@ -82,6 +82,16 @@ public class PowerSource : MonoBehaviour
         else return attachedCircuits[index];
     }
 
+    public PowerCircuit GetCircuitByConsumer(PowerConsumer consumer)
+    {
+        for (int i = 0; i < attachedCircuits.Length; i++)
+        {
+            if (attachedCircuits[i].ContainsConsumer(consumer)) 
+                return attachedCircuits[i];
+        }
+        return null;
+    }
+
     private float GetTotalDraw()
     {
         totalPowerDraw = 0;

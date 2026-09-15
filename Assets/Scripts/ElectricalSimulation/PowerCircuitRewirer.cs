@@ -4,6 +4,7 @@ public class PowerCircuitRewirer : MonoBehaviour
 {
     public PowerSource powerSource;
 
+    public System.Action<PowerConsumer, PowerCircuit> ConsumerRewiredEvent;
     public void RewireConsumer(PowerConsumer powerConsumer, PowerCircuit circuit, bool turnOff = true)
     {
         if (turnOff) powerConsumer.SetPoweredOnStatus(false);
@@ -16,6 +17,7 @@ public class PowerCircuitRewirer : MonoBehaviour
         }
 
         circuit.AddConsumer(powerConsumer);
+        ConsumerRewiredEvent?.Invoke(powerConsumer, circuit);
     }
 
     public void RewireConsumer(PowerConsumer powerConsumer, int circuitID, bool turnOff = true)

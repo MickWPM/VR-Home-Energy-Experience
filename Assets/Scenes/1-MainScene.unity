@@ -209,16 +209,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2377822070756351289, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8183217235227757597, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 2862493733534563630, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
 --- !u!4 &20042478 stripped
 Transform:
@@ -1970,7 +1961,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.03
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -2038,12 +2029,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea752f96b694eb43b62eafafac4e9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WiringVisualiser
-  consumer: {fileID: 0}
+  consumer: {fileID: 952590745102454721}
   wiringStartPoint: {fileID: 0}
   wirePath: []
   getPathFromChildren: 1
-  connectedNode: {fileID: 9146204418272244339}
-  TEMP_CONNECTED_CIRCUIT: 1
+  connectedNode: {fileID: 1550360848}
   lr: {fileID: 334131675}
 --- !u!4 &334131677
 Transform:
@@ -2054,14 +2044,12 @@ Transform:
   m_GameObject: {fileID: 334131674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.648, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: -0.436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1261669407}
-  - {fileID: 1867486331}
-  - {fileID: 1550354855}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 952590745102454720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &340591617 stripped
 Transform:
@@ -8081,7 +8069,7 @@ Transform:
   m_GameObject: {fileID: 1261669406}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.19, y: 0, z: -0.72}
+  m_LocalPosition: {x: -0.133, y: 1.292, z: -0.106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9286,37 +9274,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6413159303362163606, guid: c2cc2808c7273b449ab0a0d64751946b, type: 3}
   m_PrefabInstance: {fileID: 8987841776035282222}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1550354854
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!114 &1550360848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8241412991422917764, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
+  m_PrefabInstance: {fileID: 1419063189}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1550354855}
-  m_Layer: 0
-  m_Name: GameObject (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1550354855
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550354854}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.19, y: 1.705, z: -1.92}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 334131677}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a04c76c96521748badd209531fdccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CircuitConnectionsNode
 --- !u!1 &1561873573
 GameObject:
   m_ObjectHideFlags: 0
@@ -10469,37 +10437,6 @@ MonoBehaviour:
   CircuitStatusUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1867486330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1867486331}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1867486331
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867486330}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.19, y: 0, z: -1.92}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 334131677}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902314650
 GameObject:
   m_ObjectHideFlags: 0
@@ -12002,7 +11939,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5046713342045366928, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 334131677}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
 --- !u!1001 &8987841776035282222
@@ -12294,17 +12234,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1930746768725565670, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
   m_PrefabInstance: {fileID: 9146204418272244337}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9146204418272244339 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8241412991422917764, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
-  m_PrefabInstance: {fileID: 9146204418272244337}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9a04c76c96521748badd209531fdccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CircuitConnectionsNode
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -12319,4 +12248,3 @@ SceneRoots:
   - {fileID: 1157248501}
   - {fileID: 606812025}
   - {fileID: 1058070888}
-  - {fileID: 334131677}

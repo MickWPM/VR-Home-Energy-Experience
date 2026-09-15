@@ -5,6 +5,7 @@ public class CircuitConnectionPoint : MonoBehaviour
 {
     public int circuitID;
     private PowerSource powerSource;
+    public PowerSource PowerSource => powerSource;
     [SerializeField]private PowerCircuit circuit;
     public PowerCircuit Circuit => circuit;
 

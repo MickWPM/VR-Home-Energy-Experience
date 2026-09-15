@@ -8,13 +8,12 @@ public class WiringVisualiser : MonoBehaviour
     public bool getPathFromChildren = false;
     public CircuitConnectionsNode connectedNode;
 
-    public int TEMP_CONNECTED_CIRCUIT = 1;
     [SerializeField] private LineRenderer lr;
 
     private void Awake()
     {
         if (wiringStartPoint == null) wiringStartPoint = transform;
-        if (getPathFromChildren)
+        if (getPathFromChildren && transform.childCount > 0)
         {
             wirePath = new Transform[transform.childCount];
             for (int i = 0; i < wirePath.Length; i++)
@@ -32,8 +31,8 @@ public class WiringVisualiser : MonoBehaviour
     private void UpdateCircuitConnection()
     {
         //get connected circuit for consumer?
-        
-        var endPoint = connectedNode.GetCircuitConnectionNode(TEMP_CONNECTED_CIRCUIT).position;
+        PowerCircuit connectedCircuit = connectedNode.CircuitRewirer.powerSource.GetCircuitByConsumer(consumer);
+        var endPoint = connectedNode.GetCircuitConnectionNode(connectedCircuit).position;
         int numPathNodes = (wirePath == null || wirePath.Length == 0) ? 0 : wirePath.Length;
         Vector3[] positions = new Vector3[2 + numPathNodes];
         positions[0] = wiringStartPoint.position;

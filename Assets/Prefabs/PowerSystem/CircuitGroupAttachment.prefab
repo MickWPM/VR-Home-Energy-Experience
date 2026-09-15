@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CircuitConnectionsNode
   rewiringInteractionLogic: {fileID: 0}
-  circuit1Node: {fileID: 3249845675988534131}
-  circuit2Node: {fileID: 8968599008041505367}
-  circuit3Node: {fileID: 3053408789592875876}
+  circuit1Node: {fileID: 5838358622692618098}
+  circuit2Node: {fileID: 29585758535843414}
+  circuit3Node: {fileID: 6215005201312599909}
 --- !u!1001 &3123244371278550654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +184,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
+--- !u!114 &29585758535843414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3116176629777016872, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
+  m_PrefabInstance: {fileID: 3123244371278550654}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200da83fac34b1c47b3712fa2a522127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CircuitConnectionPoint
 --- !u!4 &8968599008041505367 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6278338332224635945, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
@@ -319,6 +330,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6278338332224635945, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
   m_PrefabInstance: {fileID: 8807042089789753178}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5838358622692618098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3116176629777016872, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
+  m_PrefabInstance: {fileID: 8807042089789753178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200da83fac34b1c47b3712fa2a522127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CircuitConnectionPoint
 --- !u!1001 &9042876685422880589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,3 +479,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6278338332224635945, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
   m_PrefabInstance: {fileID: 9042876685422880589}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6215005201312599909 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3116176629777016872, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
+  m_PrefabInstance: {fileID: 9042876685422880589}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200da83fac34b1c47b3712fa2a522127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CircuitConnectionPoint
