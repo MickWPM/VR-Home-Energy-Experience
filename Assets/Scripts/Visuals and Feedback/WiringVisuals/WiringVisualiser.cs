@@ -60,7 +60,7 @@ public class WiringVisualiser : MonoBehaviour
 
     private void OnEnable()
     {
-        if (connectedNode.CircuitRewirer != null)
+        if (connectedNode != null && connectedNode.CircuitRewirer != null)
             connectedNode.CircuitRewirer.ConsumerRewiredEvent += ConsumerRewired;
     }
 
