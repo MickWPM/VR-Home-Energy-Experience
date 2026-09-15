@@ -8,6 +8,7 @@ public class PowerCircuit : MonoBehaviour
     public float MaxWattage
     {
         get => maxWattage;
+        set => maxWattage = value;
     }
     [SerializeField] private float maxWattage = 30f;
     [SerializeField] private bool CircuitOpen = true;

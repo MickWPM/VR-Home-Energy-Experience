@@ -6,9 +6,11 @@ public class PowerSource : MonoBehaviour
 {
     public float MaxWattage
     {
-        get => maxWattage;
+        get => maxWattage; 
+        set => maxWattage = value;
     }
     [SerializeField] private float maxWattage = 30f;
+
     public PowerCircuit[] attachedCircuits;
     public bool Energised { get => SourceOpen; }
     [SerializeField] private bool SourceOpen = true;
