@@ -10,9 +10,11 @@ public class PowerCircuit : MonoBehaviour
         get => maxWattage;
         set => maxWattage = value;
     }
+    public float LoadPercent => currentCircuitPower / maxWattage;
     [SerializeField] private float maxWattage = 30f;
     [SerializeField] private bool CircuitOpen = true;
     [SerializeField] private bool PowerAvailable = false;
+    private float lastCircuitPower;
     public bool Energised
     {
         get => CircuitOpen && PowerAvailable;
@@ -42,6 +44,11 @@ public class PowerCircuit : MonoBehaviour
             }
             powerConsumers = consumers;
         }
+    }
+
+    private void Start()
+    {
+        lastCircuitPower = GetCurrentPower();
     }
 
     private float GetCurrentPower()
@@ -75,12 +82,18 @@ public class PowerCircuit : MonoBehaviour
         return powerConsumers.Contains(consumer);
     }
 
+    public System.Action<float> PowerDrawUpdatedEvent;
     public float currentCircuitPower;
     private void Update()
     {
         if (CircuitOpen == false) return;
 
         currentCircuitPower = GetCurrentPower();
+        if ( Mathf.Abs(lastCircuitPower - currentCircuitPower) > Mathf.Epsilon )
+        {
+            PowerDrawUpdatedEvent?.Invoke(currentCircuitPower);
+        }
+        lastCircuitPower = currentCircuitPower;
         if (currentCircuitPower > MaxWattage)
         {
             SetCircuitStatus(false);
@@ -112,10 +125,12 @@ public class PowerCircuit : MonoBehaviour
         }
     }
 
+    public System.Action MainsPowerAddedToCircuitEvent;
     public void SetPowerSourceStatus(bool enabled)
     {
         if (PowerAvailable == enabled) return;
         PowerAvailable = enabled;
+        MainsPowerAddedToCircuitEvent?.Invoke();
         foreach (var consumer in powerConsumers)
         {
             consumer.SetPowerAvailable(enabled);

@@ -48,6 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CircuitConnectionsNode
   rewiringInteractionLogic: {fileID: 0}
+  circuit1Node: {fileID: 3249845675988534131}
+  circuit2Node: {fileID: 8968599008041505367}
+  circuit3Node: {fileID: 3053408789592875876}
 --- !u!1001 &3123244371278550654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,6 +59,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930746768725565670}
     m_Modifications:
+    - target: {fileID: 3116176629777016872, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
+      propertyPath: circuitID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -190,6 +197,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930746768725565670}
     m_Modifications:
+    - target: {fileID: 3116176629777016872, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
+      propertyPath: circuitID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -260,11 +271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6278338332224635945, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4
+      value: 0.452
       objectReference: {fileID: 0}
     - target: {fileID: 6278338332224635945, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0.344
       objectReference: {fileID: 0}
     - target: {fileID: 6278338332224635945, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -316,6 +327,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1930746768725565670}
     m_Modifications:
+    - target: {fileID: 3116176629777016872, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
+      propertyPath: circuitID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.size
       value: 2

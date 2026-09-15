@@ -15,7 +15,7 @@ public class PowerSource : MonoBehaviour
     public bool Energised { get => SourceOpen; }
     [SerializeField] private bool SourceOpen = true;
 
-    public float[] TMPDEBUG_currentCircuitConsumption;
+    public float[] currentCircuitConsumption;
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class PowerSource : MonoBehaviour
             attachedCircuits = circuits.ToArray();
         }
 
-        TMPDEBUG_currentCircuitConsumption = new float[attachedCircuits.Length];
+        currentCircuitConsumption = new float[attachedCircuits.Length];
     }
 
     private void Start()
@@ -75,7 +75,12 @@ public class PowerSource : MonoBehaviour
         }
     }
 
-
+    public PowerCircuit GetCircuitByID(int id)
+    {
+        int index = id - 1;
+        if (index < 0 || index > attachedCircuits.Length - 1) return null;
+        else return attachedCircuits[index];
+    }
 
     private float GetTotalDraw()
     {
@@ -83,7 +88,7 @@ public class PowerSource : MonoBehaviour
         for (int i = 0; i < attachedCircuits.Length; i++)
         {
             var powerDraw = attachedCircuits[i].CurrentPowerOnLine;
-            TMPDEBUG_currentCircuitConsumption[i] = powerDraw;
+            currentCircuitConsumption[i] = powerDraw;
             totalPowerDraw += powerDraw;
         }
 
