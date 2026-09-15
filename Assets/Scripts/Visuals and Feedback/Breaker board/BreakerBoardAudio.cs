@@ -3,7 +3,7 @@ using UnityEngine.Audio;
 
 public class BreakerBoardAudio : MonoBehaviour
 {
-    public AudioSource doorSource, mainsSwitch, mainsPowerLost, mainsPowerReturned;
+    public AudioSource doorSource, mainsSwitch, mainsPowerLost, mainsPowerReturned, circuitTripped, circuitRestored;
 
     public void MainsPowerUpdate(bool powered)
     {
@@ -15,8 +15,13 @@ public class BreakerBoardAudio : MonoBehaviour
         }
     }
 
-    public void MainsSwitchOn()
+    public void CircuitStatusUpdate(bool powered)
     {
+        if (!powered) circuitTripped.Play();
+        else
+        {
+            circuitRestored.Play();
+        }
     }
 
     public void DoorOpening(float t)
