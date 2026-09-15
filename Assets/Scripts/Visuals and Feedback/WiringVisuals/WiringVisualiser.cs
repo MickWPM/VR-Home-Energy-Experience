@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class WiringVisualiser : MonoBehaviour
@@ -23,14 +24,25 @@ public class WiringVisualiser : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Start()
     {
+        connectedNode.CircuitRewirer.ConsumerRewiredEvent += ConsumerRewired;
         UpdateCircuitConnection();
     }
 
+    private void ConsumerRewired(PowerConsumer consumer, PowerCircuit circuit)
+    {
+        if (consumer != this.consumer) return;
+        UpdateCircuitConnection();
+    }
+
+    //private void Update()
+    //{
+    //    UpdateCircuitConnection();
+    //}
+
     private void UpdateCircuitConnection()
     {
-        //get connected circuit for consumer?
         PowerCircuit connectedCircuit = connectedNode.CircuitRewirer.powerSource.GetCircuitByConsumer(consumer);
         var endPoint = connectedNode.GetCircuitConnectionNode(connectedCircuit).position;
         int numPathNodes = (wirePath == null || wirePath.Length == 0) ? 0 : wirePath.Length;
@@ -45,4 +57,16 @@ public class WiringVisualiser : MonoBehaviour
         lr.positionCount = positions.Length;
         lr.SetPositions(positions);
     }
+
+    private void OnEnable()
+    {
+        if (connectedNode.CircuitRewirer != null)
+            connectedNode.CircuitRewirer.ConsumerRewiredEvent += ConsumerRewired;
+    }
+
+    private void OnDisable()
+    {
+        connectedNode.CircuitRewirer.ConsumerRewiredEvent -= ConsumerRewired;
+    }
+
 }

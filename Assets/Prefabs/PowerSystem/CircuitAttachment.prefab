@@ -118,7 +118,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.029122766, y: 0.098716475, z: 0.029122766}
+  m_LocalScale: {x: 0.029122766, y: 0.13078946, z: 0.029122766}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9129968161268465349}
@@ -389,7 +389,7 @@ Transform:
   m_GameObject: {fileID: 3784999897289579631}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23, y: 0, z: 0}
+  m_LocalPosition: {x: -0.258, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -412,9 +412,9 @@ MonoBehaviour:
   pulseSpeed: 2
   scaleAmount: 0.2
   circuitStatusMeshRenderer: {fileID: 6599465812671991387}
-  greenMaterial: {fileID: 2100000, guid: 5f5d21b16754c95438f9571a2d8105e3, type: 2}
-  yellowMaterial: {fileID: 2100000, guid: 8e0e2f078b1a9d64baaf9c940f2643a9, type: 2}
-  redMaterial: {fileID: 2100000, guid: 172403f48e66f694f90632ff287df5e9, type: 2}
+  greenMaterial: {fileID: 2100000, guid: edd0f5088b49ba5458b9213f90713a84, type: 2}
+  yellowMaterial: {fileID: 2100000, guid: 8c0b4e049fde27b41a281c6bf45719a8, type: 2}
+  redMaterial: {fileID: 2100000, guid: c5eaf4fec4d22bf4fabb877536db5d3c, type: 2}
   blackMaterial: {fileID: 2100000, guid: ba3dd74c88dcb3b4f98bdc97cfe6e042, type: 2}
   greenThreshold: 0.5
   yellowThreshold: 0.75
