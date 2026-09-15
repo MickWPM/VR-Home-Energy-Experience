@@ -15,17 +15,22 @@ public class CircuitConnectionPoint : MonoBehaviour
         circuit = powerSource.GetCircuitByID(circuitID);
     }
 
-    private void PowerDrawUpdated(float updatedPowerDraw)
-    {
-        float powerDrawProportion = updatedPowerDraw / circuit.MaxWattage;
-    }
+    //private void Start()
+    //{
+    //    PowerDrawUpdated(circuit.currentCircuitPower);
+    //}
 
-    private void OnEnable()
-    {
-        circuit.PowerDrawUpdatedEvent += PowerDrawUpdated;
-    }
-    private void OnDisable()
-    {
-        circuit.PowerDrawUpdatedEvent -= PowerDrawUpdated;
-    }
+    //private void PowerDrawUpdated(float updatedPowerDraw)
+    //{
+    //    float powerDrawProportion = updatedPowerDraw / circuit.MaxWattage;
+    //}
+
+    //private void OnEnable()
+    //{
+    //    circuit.PowerDrawUpdatedEvent += PowerDrawUpdated;
+    //}
+    //private void OnDisable()
+    //{
+    //    circuit.PowerDrawUpdatedEvent -= PowerDrawUpdated;
+    //}
 }

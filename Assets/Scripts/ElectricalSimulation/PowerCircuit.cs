@@ -48,7 +48,7 @@ public class PowerCircuit : MonoBehaviour
 
     private void Start()
     {
-        lastCircuitPower = GetCurrentPower();
+        lastCircuitPower = -1f;
     }
 
     private float GetCurrentPower()
@@ -83,7 +83,7 @@ public class PowerCircuit : MonoBehaviour
     }
 
     public System.Action<float> PowerDrawUpdatedEvent;
-    public float currentCircuitPower;
+    private float currentCircuitPower;
     private void Update()
     {
         if (CircuitOpen == false) return;

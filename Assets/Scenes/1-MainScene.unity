@@ -9401,7 +9401,6 @@ MonoBehaviour:
   maxWattage: 20
   CircuitOpen: 1
   PowerAvailable: 0
-  currentCircuitPower: 0
   CircuitBreakerResetEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -12348,7 +12347,6 @@ MonoBehaviour:
   maxWattage: 30
   CircuitOpen: 1
   PowerAvailable: 0
-  currentCircuitPower: 0
   CircuitBreakerResetEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -12676,7 +12674,6 @@ MonoBehaviour:
   maxWattage: 40
   CircuitOpen: 1
   PowerAvailable: 0
-  currentCircuitPower: 0
   CircuitBreakerResetEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -12881,7 +12878,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 96656313489641208, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
       propertyPath: poweredOn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 515005458444773825, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
       propertyPath: connectedNode
@@ -14016,6 +14013,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.06
       objectReference: {fileID: 0}
+    - target: {fileID: 1345338958725520613, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
+      propertyPath: poweredOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1502324843338644444, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
       propertyPath: connectedNode
       value: 
@@ -14141,7 +14142,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 96656313489641208, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
       propertyPath: poweredOn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 515005458444773825, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
       propertyPath: connectedNode

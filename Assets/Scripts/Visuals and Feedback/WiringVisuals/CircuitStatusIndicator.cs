@@ -28,7 +28,7 @@ public class CircuitStatusIndicator : MonoBehaviour
 
         circuit.CircuitStatusUpdateEvent.AddListener(CircuitStatusUpdated);
         circuit.MainsPowerAddedToCircuitEvent += MainsPowerAvailableForCircuit;
-        if (circuit.Energised) MainsPowerAvailableForCircuit();
+        CircuitStatusUpdated(circuit.Energised);
     }
 
 
