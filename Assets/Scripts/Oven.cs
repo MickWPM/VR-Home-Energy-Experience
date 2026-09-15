@@ -7,6 +7,7 @@ public class Oven : MonoBehaviour
     public float minTemp = 50, maxTemp = 300;
     [SerializeField] private float temperature;
     public float CurrentTemp => temperature;
+    public float CurrentTempPercent => TempAsPowerPercent(temperature);
 
     private void Awake()
     {
@@ -15,11 +16,14 @@ public class Oven : MonoBehaviour
         consumer.SetPowerConsumptionPercent(pct);
     }
 
+    public event System.Action<float> TemperaturePercentUpdated;
     public void SetTemperaturePercent(float tempPct)
     {
+        tempPct = Mathf.Clamp01(tempPct);
         float temp = TempFromPowerPercent(tempPct);
         this.temperature = Mathf.Clamp(temp, minTemp, maxTemp);
         consumer.SetPowerConsumptionPercent(tempPct);
+        TemperaturePercentUpdated?.Invoke(tempPct);
     }
 
     public void TogglePower()
