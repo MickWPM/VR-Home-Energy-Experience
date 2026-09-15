@@ -26,6 +26,14 @@ public class WiringVisualiser : MonoBehaviour
 
     private void Start()
     {
+        if (connectedNode == null)
+        {
+            Debug.LogError($"Connected node is null for {consumer}", gameObject);
+        }
+        if (connectedNode.CircuitRewirer == null)
+        {
+            Debug.LogError($"connectedNode.CircuitRewirer is null for {consumer}", gameObject);
+        }
         connectedNode.CircuitRewirer.ConsumerRewiredEvent += ConsumerRewired;
         UpdateCircuitConnection();
     }
@@ -68,5 +76,4 @@ public class WiringVisualiser : MonoBehaviour
     {
         connectedNode.CircuitRewirer.ConsumerRewiredEvent -= ConsumerRewired;
     }
-
 }

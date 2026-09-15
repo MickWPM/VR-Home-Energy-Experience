@@ -1357,7 +1357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73522218}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2742,7 +2742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333571641}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3022,10 +3022,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 375070599}
-  - component: {fileID: 375070601}
   - component: {fileID: 375070600}
   m_Layer: 0
-  m_Name: WiringVisuals (4)
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3156,24 +3155,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &375070601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375070598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea752f96b694eb43b62eafafac4e9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WiringVisualiser
-  consumer: {fileID: 2126734550}
-  wiringStartPoint: {fileID: 0}
-  wirePath: []
-  getPathFromChildren: 1
-  connectedNode: {fileID: 0}
-  lr: {fileID: 375070600}
 --- !u!1 &390787031
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,7 +5265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 514377923}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6724,10 +6705,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 754972824}
-  - component: {fileID: 754972826}
   - component: {fileID: 754972825}
   m_Layer: 0
-  m_Name: WiringVisuals (1)
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6858,24 +6838,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &754972826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754972823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea752f96b694eb43b62eafafac4e9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WiringVisualiser
-  consumer: {fileID: 2126734550}
-  wiringStartPoint: {fileID: 0}
-  wirePath: []
-  getPathFromChildren: 1
-  connectedNode: {fileID: 0}
-  lr: {fileID: 754972825}
 --- !u!1 &759212870
 GameObject:
   m_ObjectHideFlags: 0
@@ -11756,10 +11718,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1563121468}
-  - component: {fileID: 1563121470}
   - component: {fileID: 1563121469}
   m_Layer: 0
-  m_Name: WiringVisuals (2)
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11890,24 +11851,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &1563121470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563121467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea752f96b694eb43b62eafafac4e9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WiringVisualiser
-  consumer: {fileID: 2126734550}
-  wiringStartPoint: {fileID: 0}
-  wirePath: []
-  getPathFromChildren: 1
-  connectedNode: {fileID: 0}
-  lr: {fileID: 1563121469}
 --- !u!4 &1580331740 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7573410587867387718, guid: afdeb31a69faa384a9062a408727e830, type: 3}
@@ -12597,10 +12540,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1720795080}
-  - component: {fileID: 1720795082}
   - component: {fileID: 1720795081}
   m_Layer: 0
-  m_Name: WiringVisuals (3)
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12731,24 +12673,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &1720795082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720795079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea752f96b694eb43b62eafafac4e9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WiringVisualiser
-  consumer: {fileID: 2126734550}
-  wiringStartPoint: {fileID: 0}
-  wirePath: []
-  getPathFromChildren: 1
-  connectedNode: {fileID: 0}
-  lr: {fileID: 1720795081}
 --- !u!1 &1746888071
 GameObject:
   m_ObjectHideFlags: 0
@@ -13885,6 +13809,10 @@ PrefabInstance:
       propertyPath: poweredOn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100727802761774790, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
+      propertyPath: m_Name
+      value: Path
+      objectReference: {fileID: 0}
     - target: {fileID: 515005458444773825, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
       propertyPath: connectedNode
       value: 
@@ -14159,7 +14087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058879770}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14265,7 +14193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2062242407}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15260,6 +15188,10 @@ PrefabInstance:
     - target: {fileID: 96656313489641208, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
       propertyPath: poweredOn
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100727802761774790, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
+      propertyPath: m_Name
+      value: Path
       objectReference: {fileID: 0}
     - target: {fileID: 515005458444773825, guid: 44dd3addc303a6640b7cebb918645f67, type: 3}
       propertyPath: connectedNode
