@@ -11,19 +11,29 @@ public class Oven : MonoBehaviour
     private void Awake()
     {
         this.temperature = Mathf.Clamp(temperature, minTemp, maxTemp);
+        float pct = TempAsPowerPercent(this.temperature);
+        consumer.SetPowerConsumptionPercent(pct);
     }
 
     public void SetTemperaturePercent(float tempPct)
     {
-        float temp = (maxTemp - minTemp) * tempPct + minTemp;
+        float temp = TempFromPowerPercent(tempPct);
         this.temperature = Mathf.Clamp(temp, minTemp, maxTemp);
+        consumer.SetPowerConsumptionPercent(tempPct);
     }
 
-    //Returns true if we are on, false if we are off
-    public bool TogglePower()
+    public void TogglePower()
     {
         consumer.TogglePoweredOnStatus();
-        Debug.LogWarning("This wont work - we need events for power loss etc. Revisit ASAP");
-        return consumer.Energised;
+    }
+
+    private float TempFromPowerPercent(float tempPct)
+    {
+        return (maxTemp - minTemp) * tempPct + minTemp;
+    }
+    private float TempAsPowerPercent(float temp)
+    {
+        float tempInRange = temp - minTemp;
+        return tempInRange / (maxTemp - minTemp);
     }
 }
