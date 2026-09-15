@@ -33,10 +33,19 @@ public class OvenPanel : MonoBehaviour
     [ContextMenu("TogglePowerButtonPressed")]
     public void TogglePowerButtonPressed()
     {
-        bool powered = oven.TogglePower();
-        powerBackgroundImage.color = powered ? standbyColour : poweredColour;
-        //Todo - set button mat based off powered
+        oven.TogglePower();
     }
+
+    public void OvenTurnedOn()
+    {
+        powerBackgroundImage.color = poweredColour;
+    }
+
+    public void OvenTurnedOff()
+    {
+        powerBackgroundImage.color = standbyColour;
+    }
+
 
     [ContextMenu("Gain circuit power")]
     public void GainedPower()
@@ -48,6 +57,12 @@ public class OvenPanel : MonoBehaviour
     public void LostPower()
     {
         ovenTouchscreenPanel.SetActive(false);
+    }
+
+    public void PowerAvailableUpdate(bool available)
+    {
+        if (available) GainedPower();
+        else LostPower();
     }
 
 }

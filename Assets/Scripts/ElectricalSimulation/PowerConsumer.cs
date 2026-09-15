@@ -47,8 +47,6 @@ public class PowerConsumer : MonoBehaviour
         }
     }
 
-
-
     [ContextMenu("Toggle power")]
     public void TogglePoweredOnStatus()
     {
