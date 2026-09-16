@@ -44,11 +44,7 @@ public class WiringVisualiser : MonoBehaviour
         UpdateCircuitConnection();
     }
 
-    //private void Update()
-    //{
-    //    UpdateCircuitConnection();
-    //}
-
+    public event System.Action CircuitConnectionUpdateCompleteEvent;
     private void UpdateCircuitConnection()
     {
         PowerCircuit connectedCircuit = connectedNode.CircuitRewirer.powerSource.GetCircuitByConsumer(consumer);
@@ -64,6 +60,7 @@ public class WiringVisualiser : MonoBehaviour
 
         lr.positionCount = positions.Length;
         lr.SetPositions(positions);
+        CircuitConnectionUpdateCompleteEvent?.Invoke();
     }
 
     private void OnEnable()
