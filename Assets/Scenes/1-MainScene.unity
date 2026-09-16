@@ -15289,6 +15289,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.055
       objectReference: {fileID: 0}
+    - target: {fileID: 5543251424318252273, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
+      propertyPath: distancePerSpawn
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543251424318252273, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
+      propertyPath: distancePerSecond
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6193990779000322189, guid: d0ab3de736b91e5489bd92bcaa5f7ee5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.238
