@@ -23,7 +23,7 @@ public class RewiringJuice : MonoBehaviour
     public async void DoRewire()
     {
         //Ignore the initial hookup event for the rewire FX
-        //if (Time.timeSinceLevelLoad < 1f) return;
+        if (Time.timeSinceLevelLoad < 1f) return;
 
         float runningTime = 0;
 
