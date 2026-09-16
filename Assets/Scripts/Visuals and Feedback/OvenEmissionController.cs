@@ -15,7 +15,9 @@ public class OvenEmissionController : MonoBehaviour
     public void UpdateEmissionPercent(float percent)
     {
         float intensity = Mathf.Lerp(intensityMin, intensityMax, percent);
-        intensity = Mathf.Pow(intensity, 3);    //This mimics the unity material slider
+        //We can raise intensity to a power for more material slider like behevaiour
+        //In tuning it is better to just leave as is; the colour selection will do what we need
+        //intensity = Mathf.Pow(intensity, 3);    
         Color finalColor = baseColour * intensity;
         ovenHeatBarMR.material.SetColor("_EmissionColor", finalColor);
     }
