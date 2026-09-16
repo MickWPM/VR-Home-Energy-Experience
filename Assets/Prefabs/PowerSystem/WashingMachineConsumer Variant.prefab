@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5384842566264705617, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
+      propertyPath: m_Name
+      value: WiringFeedback
+      objectReference: {fileID: 0}
     - target: {fileID: 7846543018669845145, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

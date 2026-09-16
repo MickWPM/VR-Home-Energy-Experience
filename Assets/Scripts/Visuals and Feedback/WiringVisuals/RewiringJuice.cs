@@ -23,7 +23,7 @@ public class RewiringJuice : MonoBehaviour
     public async void DoRewire()
     {
         //Ignore the initial hookup event for the rewire FX
-        if (Time.timeSinceLevelLoad < 1f) return;
+        //if (Time.timeSinceLevelLoad < 1f) return;
 
         float runningTime = 0;
 
@@ -48,7 +48,7 @@ public class RewiringJuice : MonoBehaviour
                 Vector3 newPos = GetPositionAtDistance(positions, distanceCovered);
                 Instantiate(visual, newPos, Quaternion.identity);
                 runningSpawnDistance += distancePerSpawn;
-
+                plopSoundSource.transform.position = newPos;
                 plopSoundSource.Play();
                 plopSoundSource.pitch *= 1 + pitchShiftPerSpawn;
             }
@@ -57,6 +57,7 @@ public class RewiringJuice : MonoBehaviour
             runningTime += Time.deltaTime;
         }
         plopSoundSource.pitch = 1;
+        plopSoundSource.transform.localPosition = Vector3.zero;
     }
 
     private float GetTotalDistance(Vector3[] positions)

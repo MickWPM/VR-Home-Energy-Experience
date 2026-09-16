@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightsConsumer Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5384842566264705617, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
+      propertyPath: m_Name
+      value: WiringFeedback
+      objectReference: {fileID: 0}
     - target: {fileID: 5511383039780947753, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       propertyPath: m_IsActive
       value: 0
