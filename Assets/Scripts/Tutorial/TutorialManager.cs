@@ -9,26 +9,11 @@ public class TutorialManager : MonoBehaviour
     public int targetCircuitID;
     public SceneControl sceneControl;
 
-    // TutorialManager.Start
     private void Start()
     {
-        Debug.Log(
-            $"[TUTORIAL] Subscribing to " +
-            $"{rewiringInteractionLogic?.name} " +
-            $"ID={rewiringInteractionLogic?.GetInstanceID()}",
-            this);
-
-        rewiringInteractionLogic.ConsumerRewiredToCircuitEvent +=
-            RewiringInteractionLogic_ConsumerRewiredToCircuitEvent;
-
-        rewiringInteractionLogic.ConsumerRewiredToCircuitIDEvent +=
-            RewiringInteractionLogic_ConsumerRewiredToCircuitIDEvent;
+        rewiringInteractionLogic.ConsumerRewiredToCircuitEvent += RewiringInteractionLogic_ConsumerRewiredToCircuitEvent;
+        rewiringInteractionLogic.ConsumerRewiredToCircuitIDEvent += RewiringInteractionLogic_ConsumerRewiredToCircuitIDEvent;
     }
-    //private void Start()
-    //{
-    //    rewiringInteractionLogic.ConsumerRewiredToCircuitEvent += RewiringInteractionLogic_ConsumerRewiredToCircuitEvent;
-    //    rewiringInteractionLogic.ConsumerRewiredToCircuitIDEvent += RewiringInteractionLogic_ConsumerRewiredToCircuitIDEvent;
-    //}
 
     private void RewiringInteractionLogic_ConsumerRewiredToCircuitIDEvent(PowerConsumer consumer, int circuitID)
     {

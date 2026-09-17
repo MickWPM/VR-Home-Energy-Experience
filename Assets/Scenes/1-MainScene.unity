@@ -8527,6 +8527,10 @@ PrefabInstance:
       propertyPath: CircuitStatusUpdateEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1075890207}
+    - target: {fileID: 4368115336792860454, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+      propertyPath: poweredOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4794184345136589995, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
       propertyPath: m_Camera
       value: 
@@ -8534,6 +8538,10 @@ PrefabInstance:
     - target: {fileID: 5210941559202746027, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
       propertyPath: m_Name
       value: MainScenePowerSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402195171046634486, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+      propertyPath: poweredOn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7285932607704458707, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
       propertyPath: m_AnchorMax.y
