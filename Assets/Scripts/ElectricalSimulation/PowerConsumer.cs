@@ -60,7 +60,7 @@ public class PowerConsumer : MonoBehaviour
     {
         if (powerStatus == poweredOn) return;
 
-        //If we are trying to turn on but the circuit has no power, bail early but do this 
+        //If we are trying to turn on but the circuit has no power, bail early but do this first 
         if (powerStatus && this.powerAvailable == false)
         {
             //Only change our powered on state if we are a consumer that retains power state over power failure
