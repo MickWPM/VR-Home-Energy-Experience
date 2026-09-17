@@ -13,16 +13,20 @@ public class RewiringInteractionLogic : MonoBehaviour
         selectedConsumer = powerConsumer;
     }
 
+    public event System.Action<PowerConsumer, PowerCircuit> ConsumerRewiredToCircuitEvent;
+    public event System.Action<PowerConsumer, int> ConsumerRewiredToCircuitIDEvent;
     //If we are hovering over a circuit connection then we want to rewire
     public void ConsumerDeselected()
     {
         if (hoveredCircuit != null)
         {
             rewirer.RewireConsumer(selectedConsumer, hoveredCircuit);
+            ConsumerRewiredToCircuitEvent?.Invoke(selectedConsumer, hoveredCircuit);
         }
         else if (hoveredCircuitID > -1)
         {
             rewirer.RewireConsumer(selectedConsumer, hoveredCircuitID);
+            ConsumerRewiredToCircuitIDEvent?.Invoke(selectedConsumer, hoveredCircuitID);
         }
         selectedConsumer = null;
         hoveredCircuit = null;

@@ -6,12 +6,27 @@ public class CircuitConnectionsNode : MonoBehaviour
     private PowerCircuitRewirer circuitRewirer;
     public PowerCircuitRewirer CircuitRewirer => circuitRewirer;
 
+    //private void Awake()
+    //{
+    //    rewiringInteractionLogic = GameObject.FindAnyObjectByType<RewiringInteractionLogic>();
+    //    circuitRewirer = GameObject.FindAnyObjectByType<PowerCircuitRewirer>();
+    //}
+
+    // CircuitConnectionsNode.Awake
     private void Awake()
     {
-        rewiringInteractionLogic = GameObject.FindAnyObjectByType<RewiringInteractionLogic>();
-        circuitRewirer = GameObject.FindAnyObjectByType<PowerCircuitRewirer>();
-    }
+        rewiringInteractionLogic =
+            GameObject.FindAnyObjectByType<RewiringInteractionLogic>();
 
+        circuitRewirer =
+            GameObject.FindAnyObjectByType<PowerCircuitRewirer>();
+
+        Debug.Log(
+            $"[REWIRE] {name} found interaction logic " +
+            $"{rewiringInteractionLogic?.name} " +
+            $"ID={rewiringInteractionLogic?.GetInstanceID()}",
+            this);
+    }
     public void SetHoveredCircuit(PowerCircuit circuit)
     {
         rewiringInteractionLogic.PowerNodeHovered(circuit);

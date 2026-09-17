@@ -2,19 +2,51 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    public GameObject powerOutLight;
-    public GameObject powerOnLight;
+    public RewiringInteractionLogic rewiringInteractionLogic;
 
-    private void Awake()
+    public PowerConsumer endTutorialOnWiredConsumer;
+    public PowerCircuit targetCircuit;
+    public int targetCircuitID;
+    public SceneControl sceneControl;
+
+    // TutorialManager.Start
+    private void Start()
     {
-        powerOutLight.SetActive(true);
-        powerOnLight.SetActive(false);
+        Debug.Log(
+            $"[TUTORIAL] Subscribing to " +
+            $"{rewiringInteractionLogic?.name} " +
+            $"ID={rewiringInteractionLogic?.GetInstanceID()}",
+            this);
+
+        rewiringInteractionLogic.ConsumerRewiredToCircuitEvent +=
+            RewiringInteractionLogic_ConsumerRewiredToCircuitEvent;
+
+        rewiringInteractionLogic.ConsumerRewiredToCircuitIDEvent +=
+            RewiringInteractionLogic_ConsumerRewiredToCircuitIDEvent;
+    }
+    //private void Start()
+    //{
+    //    rewiringInteractionLogic.ConsumerRewiredToCircuitEvent += RewiringInteractionLogic_ConsumerRewiredToCircuitEvent;
+    //    rewiringInteractionLogic.ConsumerRewiredToCircuitIDEvent += RewiringInteractionLogic_ConsumerRewiredToCircuitIDEvent;
+    //}
+
+    private void RewiringInteractionLogic_ConsumerRewiredToCircuitIDEvent(PowerConsumer consumer, int circuitID)
+    {
+        if (endTutorialOnWiredConsumer != consumer) return;
+        if (targetCircuitID != circuitID) return;
+        TutorialComplete();
     }
 
-    [ContextMenu("Open Circuit")]
-    public void OpenCircuit()
+    private void RewiringInteractionLogic_ConsumerRewiredToCircuitEvent(PowerConsumer consumer, PowerCircuit circuit)
     {
-        powerOutLight.SetActive(false);
-        powerOnLight.SetActive(true);
+        if (endTutorialOnWiredConsumer != consumer) return;
+        if (targetCircuit != circuit) return;
+        TutorialComplete();
+    }
+
+    public GameObject disableTest;
+    private void TutorialComplete()
+    {
+        sceneControl.LoadMainScene();
     }
 }
