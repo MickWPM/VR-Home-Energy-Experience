@@ -11,7 +11,6 @@ public class TutorialFSM : MonoBehaviour
     public TutorialMainsBreakStateSetupGO mainsBlackoutSetup;
     public TutorialStateSetupFromGO mainsRestoredSetup;
     public TutorialReiwringStateSetupGO rewiringToolActive;
-    public TutorialExitStateSetupGO finalStateSetup;
 
     private void Start()
     {
