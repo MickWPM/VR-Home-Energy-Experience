@@ -27,7 +27,8 @@ public class CircuitStatusIndicator : MonoBehaviour
         circuit.PowerDrawUpdatedEvent += SetCircuitLoad;
 
         circuit.CircuitStatusUpdateEvent.AddListener(CircuitStatusUpdated);
-        circuit.MainsPowerAddedToCircuitEvent += MainsPowerAvailableForCircuit;
+        //circuit.MainsPowerToCircuitUpdatedEvent += MainsPowerAvailableForCircuit;
+        circuit.MainsPowerChangedToCircuitEvent += MainsPowerChangedForCircuit;
         CircuitStatusUpdated(circuit.Energised);
     }
 
@@ -36,16 +37,18 @@ public class CircuitStatusIndicator : MonoBehaviour
     //OnEnable runs between awake and start so the first event subscription needs to be done in Start
     //This is because we are using Start to get the circuit; the connection point gets it in awake
     //We could get the circuit in OnEnable but that is against the current project wide convention
-    private void OnEnable()
-    {
-        if (circuit == null) return;
-        circuit.PowerDrawUpdatedEvent += SetCircuitLoad;
-        circuit.CircuitStatusUpdateEvent.AddListener(CircuitStatusUpdated);
-    }
+    //private void OnEnable()
+    //{
+    //    if (circuit == null) return;
+    //    circuit.PowerDrawUpdatedEvent += SetCircuitLoad;
+    //    circuit.CircuitStatusUpdateEvent.AddListener(CircuitStatusUpdated);
+    //}
     private void OnDisable()
     {
         circuit.PowerDrawUpdatedEvent -= SetCircuitLoad;
         circuit.CircuitStatusUpdateEvent.RemoveListener(CircuitStatusUpdated);
+        //circuit.MainsPowerToCircuitUpdatedEvent -= MainsPowerAvailableForCircuit;
+        circuit.MainsPowerChangedToCircuitEvent -= MainsPowerChangedForCircuit;
     }
 
     void Update()
@@ -86,8 +89,14 @@ public class CircuitStatusIndicator : MonoBehaviour
         loadMultiplier = 0.5f;
     }
 
-    private void MainsPowerAvailableForCircuit()
+    private void MainsPowerChangedForCircuit()
     {
-        UpdateLoadPercent();
+        if (circuit.CircuitOpen) UpdateLoadPercent();
     }
+
+    //private void MainsPowerAvailableForCircuit(bool available)
+    //{
+    //    if (available) UpdateLoadPercent();
+    //    else CircuitPowerOff();
+    //}
 }

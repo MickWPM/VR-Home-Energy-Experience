@@ -12,12 +12,13 @@ public class PowerCircuit : MonoBehaviour
     }
     public float LoadPercent => currentCircuitPower / maxWattage;
     [SerializeField] private float maxWattage = 30f;
-    [SerializeField] private bool CircuitOpen = true;
-    [SerializeField] private bool PowerAvailable = false;
+    [SerializeField] private bool circuitOpen = true;
+    public bool CircuitOpen => circuitOpen;
+    [SerializeField] private bool powerAvailable = false;
     private float lastCircuitPower;
     public bool Energised
     {
-        get => CircuitOpen && PowerAvailable;
+        get => circuitOpen && powerAvailable;
     }
 
     public float CurrentPowerOnLine
@@ -53,8 +54,8 @@ public class PowerCircuit : MonoBehaviour
 
     private float GetCurrentPower()
     {
-        if (CircuitOpen == false) return 0;
-        if (PowerAvailable == false) return 0;
+        if (circuitOpen == false) return 0;
+        if (powerAvailable == false) return 0;
 
         if (powerConsumers == null || powerConsumers.Count < 1) return 0;
 
@@ -74,7 +75,7 @@ public class PowerCircuit : MonoBehaviour
     public void AddConsumer(PowerConsumer consumer)
     {
         powerConsumers.Add(consumer);
-        consumer.SetPowerAvailable(PowerAvailable);
+        consumer.SetPowerAvailable(powerAvailable);
     }
 
     public bool ContainsConsumer(PowerConsumer consumer)
@@ -86,7 +87,7 @@ public class PowerCircuit : MonoBehaviour
     private float currentCircuitPower;
     private void Update()
     {
-        if (CircuitOpen == false) return;
+        if (circuitOpen == false) return;
 
         currentCircuitPower = GetCurrentPower();
         if ( Mathf.Abs(lastCircuitPower - currentCircuitPower) > Mathf.Epsilon )
@@ -106,7 +107,7 @@ public class PowerCircuit : MonoBehaviour
     [ContextMenu("Reset circuit breaker")]
     public void ResetCircuitBreaker()
     {
-        if (CircuitOpen) return;
+        if (circuitOpen) return;
         CircuitBreakerResetEvent?.Invoke();
         SetCircuitStatus(true);
     }
@@ -114,23 +115,25 @@ public class PowerCircuit : MonoBehaviour
     public UnityEvent<bool> CircuitStatusUpdateEvent;
     public void SetCircuitStatus(bool enabled)
     {
-        if (CircuitOpen == enabled) return;
-        CircuitOpen = enabled;
+        if (circuitOpen == enabled) return;
+        circuitOpen = enabled;
         CircuitStatusUpdateEvent?.Invoke(enabled);
 
-        bool powerAvailable = CircuitOpen ? PowerAvailable : false;
+        bool powerAvailable = circuitOpen ? this.powerAvailable : false;
         foreach (var consumer in powerConsumers)
         {
             consumer.SetPowerAvailable(powerAvailable);
         }
     }
 
-    public System.Action MainsPowerAddedToCircuitEvent;
+    public System.Action MainsPowerChangedToCircuitEvent;
+    //public System.Action<bool> MainsPowerToCircuitUpdatedEvent;
     public void SetPowerSourceStatus(bool enabled)
     {
-        if (PowerAvailable == enabled) return;
-        PowerAvailable = enabled;
-        MainsPowerAddedToCircuitEvent?.Invoke();
+        if (powerAvailable == enabled) return;
+        powerAvailable = enabled;
+        //MainsPowerToCircuitUpdatedEvent?.Invoke(enabled);
+        MainsPowerChangedToCircuitEvent?.Invoke();
         foreach (var consumer in powerConsumers)
         {
             consumer.SetPowerAvailable(enabled);
@@ -139,8 +142,8 @@ public class PowerCircuit : MonoBehaviour
 
     public string GetNiceSummary()
     {
-        var currentDraw = CircuitOpen && PowerAvailable ? CurrentPowerOnLine : 0;
-        var trippedString = CircuitOpen ? string.Empty : " (TRIPPED)";
+        var currentDraw = circuitOpen && powerAvailable ? CurrentPowerOnLine : 0;
+        var trippedString = circuitOpen ? string.Empty : " (TRIPPED)";
         return $"{gameObject.name}: {currentDraw}/ {MaxWattage}{trippedString}\\r\\n{powerConsumers.Count} connected consumers\\r\\n\\r\\n";
     }
 }
