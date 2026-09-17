@@ -8,6 +8,7 @@ namespace FSM
     {
         private List<State<TContext>> statesDictionary;
         private State<TContext> currentState;
+        public string CurrentState => currentState.StateName;
         private Dictionary<State<TContext>, List<Transition<TContext>>> transitionsDictionary;
         private List<Transition<TContext>> currentStateTransitions;
         //Default behaviour is state changed takes one "tick" - can override this here

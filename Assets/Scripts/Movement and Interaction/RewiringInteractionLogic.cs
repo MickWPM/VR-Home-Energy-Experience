@@ -15,6 +15,7 @@ public class RewiringInteractionLogic : MonoBehaviour
 
     public event System.Action<PowerConsumer, PowerCircuit> ConsumerRewiredToCircuitEvent;
     public event System.Action<PowerConsumer, int> ConsumerRewiredToCircuitIDEvent;
+    public event System.Action ConsumerDeselectedEvent;
     //If we are hovering over a circuit connection then we want to rewire
     public void ConsumerDeselected()
     {
@@ -31,6 +32,7 @@ public class RewiringInteractionLogic : MonoBehaviour
         selectedConsumer = null;
         hoveredCircuit = null;
         hoveredCircuitID = -1;
+        ConsumerDeselectedEvent?.Invoke();
     }
 
     public void PowerNodeHovered(int circuitID)

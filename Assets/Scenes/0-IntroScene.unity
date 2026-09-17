@@ -468,7 +468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &208531364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,7 +497,8 @@ Transform:
   m_LocalPosition: {x: -5.59, y: 2.8089, z: -0.25747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 600112284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317885713
@@ -1334,8 +1335,9 @@ GameObject:
   - component: {fileID: 600112287}
   - component: {fileID: 600112286}
   - component: {fileID: 600112285}
+  - component: {fileID: 600112288}
   m_Layer: 5
-  m_Name: CircuitInteractHintIntro
+  m_Name: StateDebug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1348,17 +1350,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600112283}
-  m_LocalRotation: {x: -0, y: 0.33661348, z: -0, w: -0.94164294}
-  m_LocalPosition: {x: 0, y: 0, z: 2.191}
-  m_LocalScale: {x: 0.0037368387, y: 0.0037368387, z: 0.0037368387}
+  m_LocalRotation: {x: -0, y: -0.049360137, z: -0, w: -0.9987811}
+  m_LocalPosition: {x: 0, y: 0, z: 3.08747}
+  m_LocalScale: {x: 0.0037368392, y: 0.0037368387, z: 0.0037368392}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 807934779}
-  m_Father: {fileID: 949577558}
-  m_LocalEulerAnglesHint: {x: 0, y: 320.659, z: 0}
+  m_Father: {fileID: 208531365}
+  m_LocalEulerAnglesHint: {x: 0, y: 365.659, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.941, y: 2.69}
+  m_AnchoredPosition: {x: 3.0299997, y: 0.26109982}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600112285
@@ -1424,6 +1426,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &600112288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600112283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d578a82ddfcaa42b7e9ce2816ed60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialStateDebug
+  fsm: {fileID: 1326785704}
+  debugText: {fileID: 807934780}
+  tutorialReiwringStateSetupGO: {fileID: 1587474194}
 --- !u!1001 &605247503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1886,7 +1903,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807934778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1894,8 +1911,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.9, y: 0}
-  m_SizeDelta: {x: 279.9, y: 50}
+  m_AnchoredPosition: {x: 118, y: -67}
+  m_SizeDelta: {x: 459.8, y: 174.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &807934780
 MonoBehaviour:
@@ -1917,7 +1934,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Point your left controller at the object you want to rewire
+  m_text: 'CURRENT STATE:
+
+    Consumer selected check: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2469,7 +2488,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 600112284}
   - {fileID: 2038480953}
   - {fileID: 1984799088}
   m_Father: {fileID: 1890568554}
@@ -2500,12 +2518,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957555720}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1623721569}
+  m_Father: {fileID: 1440762613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &957555722
 MeshRenderer:
@@ -2840,11 +2858,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 698995844807450313, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       propertyPath: m_LastSelectExited.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 698995844807450313, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 698995844807450313, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       propertyPath: m_LastSelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -3230,14 +3248,14 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7846543018669845145, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 957555721}
+    - targetCorrespondingSourceObject: {fileID: 7846543018669845145, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 558702309}
     - targetCorrespondingSourceObject: {fileID: 7846543018669845145, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1992581616}
-    - targetCorrespondingSourceObject: {fileID: 6377660087792705124, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 957555721}
     - targetCorrespondingSourceObject: {fileID: 857918668078639007, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1782164172}
@@ -3608,6 +3626,7 @@ MonoBehaviour:
   mainsBlackoutSetup: {fileID: 1874867550}
   mainsRestoredSetup: {fileID: 573519613}
   rewiringToolActive: {fileID: 1587474194}
+  finalStateSetup: {fileID: 0}
   mainsBreakTimeout: 5
 --- !u!114 &1326785705
 MonoBehaviour:
@@ -3957,6 +3976,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2f2de9a66121547829b5b3940a8669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerConsumer
+--- !u!1 &1520695619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9156328114864469640, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
+  m_PrefabInstance: {fileID: 549424601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1587474192
 GameObject:
   m_ObjectHideFlags: 0
@@ -4007,11 +4031,19 @@ MonoBehaviour:
     - {fileID: 2038480954}
     disableOnEntry:
     - {fileID: 4903765069368632588}
---- !u!4 &1623721569 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6377660087792705124, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
-  m_PrefabInstance: {fileID: 1152776008}
-  m_PrefabAsset: {fileID: 0}
+  stateSetupMidRewire:
+    requiredActiveObject: {fileID: 0}
+    enableOnEntry:
+    - {fileID: 1984799089}
+    disableOnEntry:
+    - {fileID: 2038480954}
+  stateSetupPostRewire:
+    requiredActiveObject: {fileID: 1992581615}
+    enableOnEntry: []
+    disableOnEntry:
+    - {fileID: 1708984976}
+    - {fileID: 1520695619}
+    - {fileID: 1984799089}
 --- !u!1 &1637547853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4196,7 +4228,6 @@ MonoBehaviour:
   objectsToDisable:
   - {fileID: 1697997817}
   - {fileID: 4903765069368632588}
-  - {fileID: 600112283}
   - {fileID: 2038480954}
   - {fileID: 1984799089}
   - {fileID: 558702308}
@@ -4501,6 +4532,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 264950953847267573, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
   m_PrefabInstance: {fileID: 1697997813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1708984976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2405673064647106991, guid: 22fe135129d227b4ca280b5dc955dddd, type: 3}
+  m_PrefabInstance: {fileID: 1152776008}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1744491739
 GameObject:
@@ -5316,7 +5352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 264950953847267573, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1146301043559103831, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5774,6 +5810,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4353629464313954924, guid: fee8d5a4ee8583545b6bfab691c8f62d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4652945845315578849, guid: fee8d5a4ee8583545b6bfab691c8f62d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -5791,6 +5831,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5273558811350538183, guid: fee8d5a4ee8583545b6bfab691c8f62d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172245286028088142, guid: fee8d5a4ee8583545b6bfab691c8f62d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -5817,6 +5861,10 @@ PrefabInstance:
     - target: {fileID: 6477013569221361776, guid: fee8d5a4ee8583545b6bfab691c8f62d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834016847623640286, guid: fee8d5a4ee8583545b6bfab691c8f62d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7223925858317790525, guid: fee8d5a4ee8583545b6bfab691c8f62d, type: 3}
       propertyPath: m_LocalRotation.w

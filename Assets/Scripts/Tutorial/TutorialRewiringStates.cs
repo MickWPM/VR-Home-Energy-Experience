@@ -6,7 +6,7 @@ public class TutorialRewiringStates : FSM.State<NothingContext>
     public override string StateName => stateName;
     private string stateName;
     TutorialReiwringStateSetup stateSetup;
-    private bool manageGOs = false;
+
     public TutorialRewiringStates(TutorialReiwringStateSetup setupData, string stateName)
     {
         this.stateName = stateName;

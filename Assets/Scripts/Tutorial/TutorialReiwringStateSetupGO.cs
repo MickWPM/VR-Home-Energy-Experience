@@ -4,8 +4,10 @@ using UnityEngine;
 public class TutorialReiwringStateSetupGO : MonoBehaviour
 {
     public TutorialReiwringStateSetup stateSetup;
+    public TutorialReiwringStateSetup stateSetupMidRewire;
+    public TutorialReiwringStateSetup stateSetupPostRewire;
 
-
+    public bool ConsumerSelected => consumerSelected;
     private bool consumerSelected = false;
     public void TargetConsumerSelected(bool selected)
     {
@@ -21,9 +23,15 @@ public class TutorialReiwringStateSetupGO : MonoBehaviour
     {
         return stateSetup.requiredActiveObject.activeInHierarchy == false;
     }
+
     public bool TransitionMetObjectActive(NothingContext nothingContext)
     {
         return stateSetup.requiredActiveObject.activeInHierarchy == true;
+    }
+
+    public bool TransitionMetExitState(NothingContext nothingContext)
+    {
+        return stateSetupPostRewire.requiredActiveObject.activeInHierarchy;
     }
 }
 
