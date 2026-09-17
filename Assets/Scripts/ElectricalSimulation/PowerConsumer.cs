@@ -42,8 +42,8 @@ public class PowerConsumer : MonoBehaviour
     {
         if (this.powerAvailable != powerAvailable)
         {
-            PowerAvailableUpdatedEvent?.Invoke(powerAvailable);
             this.powerAvailable = powerAvailable;
+            PowerAvailableUpdatedEvent?.Invoke(powerAvailable);
             CheckEnergisedStatusUpdate();
         }
     }

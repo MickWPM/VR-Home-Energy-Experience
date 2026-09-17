@@ -75,7 +75,7 @@ public class PowerCircuit : MonoBehaviour
     public void AddConsumer(PowerConsumer consumer)
     {
         powerConsumers.Add(consumer);
-        consumer.SetPowerAvailable(powerAvailable);
+        consumer.SetPowerAvailable(Energised);
     }
 
     public bool ContainsConsumer(PowerConsumer consumer)
@@ -117,26 +117,25 @@ public class PowerCircuit : MonoBehaviour
     {
         if (circuitOpen == enabled) return;
         circuitOpen = enabled;
-        CircuitStatusUpdateEvent?.Invoke(enabled);
 
-        bool powerAvailable = circuitOpen ? this.powerAvailable : false;
-        foreach (var consumer in powerConsumers)
-        {
-            consumer.SetPowerAvailable(powerAvailable);
-        }
+        UpdateConsumerAvailability();
+        CircuitStatusUpdateEvent?.Invoke(enabled);
     }
 
     public System.Action MainsPowerChangedToCircuitEvent;
-    //public System.Action<bool> MainsPowerToCircuitUpdatedEvent;
     public void SetPowerSourceStatus(bool enabled)
     {
         if (powerAvailable == enabled) return;
         powerAvailable = enabled;
-        //MainsPowerToCircuitUpdatedEvent?.Invoke(enabled);
+        UpdateConsumerAvailability();
         MainsPowerChangedToCircuitEvent?.Invoke();
+    }
+
+    private void UpdateConsumerAvailability()
+    {
         foreach (var consumer in powerConsumers)
         {
-            consumer.SetPowerAvailable(enabled);
+            consumer.SetPowerAvailable(Energised);
         }
     }
 
