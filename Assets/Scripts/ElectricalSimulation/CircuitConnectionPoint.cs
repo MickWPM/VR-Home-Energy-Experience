@@ -14,23 +14,4 @@ public class CircuitConnectionPoint : MonoBehaviour
         powerSource = GameObject.FindAnyObjectByType<PowerSource>();
         circuit = powerSource.GetCircuitByID(circuitID);
     }
-
-    //private void Start()
-    //{
-    //    PowerDrawUpdated(circuit.currentCircuitPower);
-    //}
-
-    //private void PowerDrawUpdated(float updatedPowerDraw)
-    //{
-    //    float powerDrawProportion = updatedPowerDraw / circuit.MaxWattage;
-    //}
-
-    //private void OnEnable()
-    //{
-    //    circuit.PowerDrawUpdatedEvent += PowerDrawUpdated;
-    //}
-    //private void OnDisable()
-    //{
-    //    circuit.PowerDrawUpdatedEvent -= PowerDrawUpdated;
-    //}
 }
