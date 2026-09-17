@@ -1323,6 +1323,7 @@ MonoBehaviour:
   - {fileID: 4903765069368632588}
   - {fileID: 549424602}
   - {fileID: 1093693090}
+  - {fileID: 558702308}
 --- !u!1 &600112283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,7 +2551,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 46254e1dbdf138d40b317bc44274c5fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3626,7 +3627,6 @@ MonoBehaviour:
   mainsBlackoutSetup: {fileID: 1874867550}
   mainsRestoredSetup: {fileID: 573519613}
   rewiringToolActive: {fileID: 1587474194}
-  finalStateSetup: {fileID: 0}
   mainsBreakTimeout: 5
 --- !u!114 &1326785705
 MonoBehaviour:
@@ -5654,6 +5654,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.059
       objectReference: {fileID: 0}
+    - target: {fileID: 2347450786747432575, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3977144761200331791, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -5736,19 +5740,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5168634444173001444, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
       propertyPath: m_text
-      value: Press and hold to select a power consumer
+      value: 'Press and hold to select a power consumer.
+
+        (The blue cube
+        here for now!)'
       objectReference: {fileID: 0}
     - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 279.9
+      value: 439.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 225.6
       objectReference: {fileID: 0}
     - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
       propertyPath: m_LocalPosition.z
+      value: -61
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.989739
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.14288734
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 39.9
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773173073130618632, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 16.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438535014155943662, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 341.7226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438535014155943662, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 198.8117
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438535014155943662, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438535014155943662, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.0046
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438535014155943662, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.1384
       objectReference: {fileID: 0}
     - target: {fileID: 8154254292989879032, guid: 0af1bb88f20b87b4486864f9e91cc733, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
