@@ -21,6 +21,14 @@ public class TutorialMainsBreakState : FSM.State<NothingContext>
     {
         stateSetup.powerSource.MaxWattage = stateSetup.capacityToSetOnEntry;
         this.entryTime = Time.timeSinceLevelLoad;
+
+        if (stateSetup.objectsToDisable != null && stateSetup.objectsToDisable.Length > 0)
+        {
+            for (int i = 0; stateSetup.objectsToDisable.Length > 0; i++)
+            {
+                stateSetup.objectsToDisable[i].SetActive(false);
+            }
+        }
         Debug.Log($"Entered {StateName}");
     }
 

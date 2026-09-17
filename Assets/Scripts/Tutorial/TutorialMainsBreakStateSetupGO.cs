@@ -24,5 +24,6 @@ public class TutorialMainsBreakStateSetup
     public PowerSource powerSource;
     public int capacityToSetOnEntry = 5;
     public GameObject[] objectsToEnable;
+    public GameObject[] objectsToDisable;
     public float enableObjectDelay = 3;
 }
