@@ -1247,6 +1247,10 @@ PrefabInstance:
       propertyPath: m_text
       value: REWIRE TO THIS CIRCUIT!
       objectReference: {fileID: 0}
+    - target: {fileID: 7444807756774868140, guid: 7c00cfc6913a9f948bc62d7805e743ac, type: 3}
+      propertyPath: fadeTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7403,9 +7407,6 @@ GameObject:
   - component: {fileID: 8166122738282407356}
   - component: {fileID: 1223390480593453301}
   - component: {fileID: 6330826741379556069}
-  - component: {fileID: 8938303854307170341}
-  - component: {fileID: 2977591225045232242}
-  - component: {fileID: 7117898826452664526}
   m_Layer: 5
   m_Name: TitlePanel
   m_TagString: Untagged
@@ -7549,18 +7550,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1.36, y: 2.63}
   m_SizeDelta: {x: 467.5638, y: 444.2996}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2977591225045232242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561831908308651537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7cb17c96d0b2b1438bb1b5376a5a22e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneControl
 --- !u!1 &3794011533857972025
 GameObject:
   m_ObjectHideFlags: 0
@@ -8002,20 +7991,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7117898826452664526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561831908308651537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 788e4eb69c88ce648858100947f9b5b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ConfigManagerControl
-  showPosX: -1.65
-  hidePosX: -1.7
 --- !u!114 &8166122738282407356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,31 +8037,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &8938303854307170341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561831908308651537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b8031055bd6c84c8a2f2a7b18d305d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ConfigurationManager
-  mainsPower: {fileID: 0}
-  circuit1: {fileID: 0}
-  circuit2: {fileID: 0}
-  circuit3: {fileID: 0}
-  mainsPowerText: {fileID: 0}
-  circuit1Text: {fileID: 0}
-  circuit2Text: {fileID: 0}
-  circuit3Text: {fileID: 0}
-  mainsPowerSlider: {fileID: 0}
-  circuit1Slider: {fileID: 0}
-  circuit2Slider: {fileID: 0}
-  circuit3Slider: {fileID: 0}
-  revertButton: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

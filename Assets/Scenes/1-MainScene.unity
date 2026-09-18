@@ -4973,6 +4973,30 @@ PrefabInstance:
       propertyPath: poweredOn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4649709554018914175, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7989844711805658706}
+    - target: {fileID: 4649709554018914175, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+      propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7989844711805658706}
+    - target: {fileID: 4649709554018914175, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: HoverEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649709554018914175, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+      propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: HoverStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649709554018914175, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AudioHoverController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649709554018914175, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+      propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AudioHoverController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4794184345136589995, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4990,7 +5014,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8641642377951694273, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3836855664528629739, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
@@ -5021,6 +5046,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+--- !u!114 &7989844711805658706 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8255593185561740926, guid: 784bcf8400f6dcb47a3254d9a5fe3303, type: 3}
+  m_PrefabInstance: {fileID: 7989844711805658705}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd71bb583fbd92547aec08a6292ee727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioHoverController
 --- !u!1001 &8987841776035282222
 PrefabInstance:
   m_ObjectHideFlags: 0

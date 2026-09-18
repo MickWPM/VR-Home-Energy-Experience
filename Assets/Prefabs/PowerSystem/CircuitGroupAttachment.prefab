@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6440503353186628861}
   - component: {fileID: 99648935345559958}
+  - component: {fileID: 7444807756774868140}
   m_Layer: 0
   m_Name: AudioHover
   m_TagString: Untagged
@@ -129,6 +130,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7444807756774868140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159544841293515054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd71bb583fbd92547aec08a6292ee727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioHoverController
+  audioSource: {fileID: 99648935345559958}
+  fadeOutTime: 1
 --- !u!1 &4713466667524766911
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +239,7 @@ PrefabInstance:
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 99648935345559958}
+      objectReference: {fileID: 7444807756774868140}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -232,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 99648935345559958}
+      objectReference: {fileID: 7444807756774868140}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -247,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Stop
+      value: HoverEnd
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -263,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Play
+      value: HoverStart
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -271,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: AudioHoverController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -279,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: AudioHoverController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
@@ -425,7 +440,7 @@ PrefabInstance:
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 99648935345559958}
+      objectReference: {fileID: 7444807756774868140}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -433,7 +448,7 @@ PrefabInstance:
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 99648935345559958}
+      objectReference: {fileID: 7444807756774868140}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -448,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Stop
+      value: HoverEnd
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -464,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Play
+      value: HoverStart
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -472,7 +487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: AudioHoverController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -480,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: AudioHoverController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -614,7 +629,7 @@ PrefabInstance:
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 99648935345559958}
+      objectReference: {fileID: 7444807756774868140}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -622,7 +637,7 @@ PrefabInstance:
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 99648935345559958}
+      objectReference: {fileID: 7444807756774868140}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -637,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Stop
+      value: HoverEnd
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -653,7 +668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Play
+      value: HoverStart
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -661,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: AudioHoverController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -669,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: AudioHoverController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3422585483005528823, guid: eb30ff26e361e174f8dd2be89ed1db55, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
