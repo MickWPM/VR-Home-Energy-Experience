@@ -8,10 +8,23 @@ public class FPSDebug: MonoBehaviour
 
     private float accumulatedTime = 0f;
     private int frameCount = 0;
+    private bool showFPS = false;
 
+    private void Awake()
+    {
+        fpsText.gameObject.SetActive(showFPS); 
+    }
+
+    public void ToggleFPSDisplay()
+    {
+        showFPS = !showFPS;
+        fpsText.gameObject.SetActive(showFPS);
+    }
 
     void Update()
     {
+        if (showFPS == false) return;
+
         accumulatedTime += Time.unscaledDeltaTime;
         frameCount++;
 

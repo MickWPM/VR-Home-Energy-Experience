@@ -8,7 +8,11 @@ public class PowerCircuit : MonoBehaviour
     public float MaxWattage
     {
         get => maxWattage;
-        set => maxWattage = value;
+        set
+        {
+            maxWattage = value;
+            PowerDrawUpdatedEvent(currentCircuitPower);
+        }
     }
     public float LoadPercent => currentCircuitPower / maxWattage;
     [SerializeField] private float maxWattage = 30f;
