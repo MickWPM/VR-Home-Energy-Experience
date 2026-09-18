@@ -35,16 +35,11 @@ public class PowerSource : MonoBehaviour
         }
 
         currentCircuitConsumption = new float[attachedCircuits.Length];
-    }
-
-    private void Start()
-    {
         foreach (var circuit in attachedCircuits)
         {
             circuit.SetPowerSourceStatus(SourceOpen);
         }
     }
-
 
     [SerializeField] float totalPowerDraw;
     private void Update()
