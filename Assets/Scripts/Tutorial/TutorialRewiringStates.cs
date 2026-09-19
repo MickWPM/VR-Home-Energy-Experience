@@ -5,7 +5,7 @@ public class TutorialRewiringStates : FSM.State<NothingContext>
 {
     public override string StateName => stateName;
     private string stateName;
-    TutorialReiwringStateSetup stateSetup;
+    private TutorialReiwringStateSetup stateSetup;
 
     public TutorialRewiringStates(TutorialReiwringStateSetup setupData, string stateName)
     {
@@ -18,14 +18,6 @@ public class TutorialRewiringStates : FSM.State<NothingContext>
         SetGoArrayStatus(stateSetup.enableOnEntry, true);
         SetGoArrayStatus(stateSetup.disableOnEntry, false);
         Debug.Log($"Entered {StateName}");
-    }
-
-
-    public override void UpdateState(NothingContext context)
-    {
-        base.UpdateState(context);
-
-
     }
 
     public override void ExitState(NothingContext context)

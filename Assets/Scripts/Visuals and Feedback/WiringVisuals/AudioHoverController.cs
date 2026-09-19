@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 //The purpose of this script is to stop the audio clipping on hover end.
