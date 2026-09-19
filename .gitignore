@@ -59,6 +59,7 @@ sysinfo.txt
 
 # Builds
 *.apk
+!PublishedBuild/HomeEnergyDebugger-MM.apk
 *.aab
 *.unitypackage
 *.unitypackage.meta
